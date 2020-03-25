@@ -1,0 +1,17 @@
+{
+  "name": "covid-19-app",
+  "version": "1.0.0",
+  "description": "Commandline COVID-19 tracker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Anand Joshi",
+  "license": "ISC",
+  "dependencies": {
+    "cli-table3": "^0.5.1",
+    "command-line-args": "^5.1.1",
+    "json-groupby": "^1.1.0"
+  }
+}
