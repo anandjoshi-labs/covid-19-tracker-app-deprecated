@@ -4,6 +4,12 @@ COVID-19 Commandline Tracker
 
 Special thanks to [COVID-19 Tracker API](https://github.com/ExpDev07/coronavirus-tracker-api) to get latest COVID-19 data. 
 
+## Build
+
+```javascript
+npm install
+```
+
 ## Usage
 
 ```javascript
