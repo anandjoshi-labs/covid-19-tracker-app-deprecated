@@ -1,6 +1,6 @@
-# COVID-19 Tracker commandline App
+# COVID-19 Tracker Commandline App
 
-COVID-19 Commandline Tracker
+COVID-19 commandline tracker
 
 Special thanks to [COVID-19 Tracker API](https://github.com/ExpDev07/coronavirus-tracker-api) to get latest COVID-19 data. 
 
