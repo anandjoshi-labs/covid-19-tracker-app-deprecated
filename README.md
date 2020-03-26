@@ -13,7 +13,7 @@ npm install
 ## Usage
 
 ```javascript
-❯ node .\index.js --country_code CA --summary
+❯ node index.js --country_code CA --summary
 COVID API statusCode: 200
 ╔══════════════╤═════════╤═══════════╤═══════════╤═══════╗
 ║ Country Code │ Country │ Confirmed │ Recovered │ Death ║
@@ -25,7 +25,7 @@ COVID API statusCode: 200
 ```
 
 ```javascript
-❯ node .\index.js --country_code CA
+❯ node index.js --country_code CA
 COVID API statusCode: 200
 ╔══════════════╤═════════╤═══════════════════════════╤═══════════╤═══════════╤═══════╗
 ║ Country Code │ Country │ Province                  │ Confirmed │ Recovered │ Death ║
@@ -61,7 +61,7 @@ COVID API statusCode: 200
 ```
 
 ```javascript
-❯ node .\index.js
+❯ node index.js
 COVID API statusCode: 200
 ╔══════════════╤══════════════════════════════════╤══════════════════════════════╤═══════════╤═══════════╤═══════╗
 ║ Country Code │ Country                          │ Province                     │ Confirmed │ Recovered │ Death ║
