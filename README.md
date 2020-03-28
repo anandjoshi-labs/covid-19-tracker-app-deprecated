@@ -4,6 +4,8 @@ COVID-19 commandline tracker
 
 Special thanks to [COVID-19 Tracker API](https://github.com/ExpDev07/coronavirus-tracker-api) to get latest COVID-19 data. 
 
+![Covid-19 Cases](https://covid19-badges.herokuapp.com/confirmed/latest) ![Covid-19 Recovered](https://covid19-badges.herokuapp.com/recovered/latest) ![Covid-19 Deaths](https://covid19-badges.herokuapp.com/deaths/latest)
+
 ## Build
 
 ```javascript
