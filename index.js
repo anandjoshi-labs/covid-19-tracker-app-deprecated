@@ -16,7 +16,7 @@ const request = {
   method: 'GET'
 };
 
-//var table = new Table({ chars: {'mid': '', 'left-mid': '', 'mid-mid': '', 'right-mid': ''} });
+//let table = new Table({ chars: {'mid': '', 'left-mid': '', 'mid-mid': '', 'right-mid': ''} });
 let table = new Table({
   chars: { 'top': '═' , 'top-mid': '╤' , 'top-left': '╔' , 'top-right': '╗'
          , 'bottom': '═' , 'bottom-mid': '╧' , 'bottom-left': '╚' , 'bottom-right': '╝'
@@ -50,13 +50,13 @@ const req = https.request(request, res => {
             ["","","","","",""]
           );
         }
-        for(var country_code in data) {
-          for (var country in data[country_code]) {
+        for(let country_code in data) {
+          for (let country in data[country_code]) {
             if (options.summary) {
               let confirmed = 0;
               let recovered = 0;
               let death = 0;
-              for (var province in data[country_code][country]) {
+              for (let province in data[country_code][country]) {
                 confirmed += data[country_code][country][province]["latest.confirmed"][0];
                 recovered += data[country_code][country][province]["latest.recovered"][0];
                 death += data[country_code][country][province]["latest.deaths"][0];
@@ -65,7 +65,7 @@ const req = https.request(request, res => {
                 [country_code, country, confirmed, recovered, death]
               );
             } else {
-              for (var province in data[country_code][country]) {
+              for (let province in data[country_code][country]) {
                 let confirmed = data[country_code][country][province]["latest.confirmed"][0];
                 let recovered = data[country_code][country][province]["latest.recovered"][0];
                 let death = data[country_code][country][province]["latest.deaths"][0];
