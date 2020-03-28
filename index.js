@@ -1,7 +1,7 @@
-const https = require('https')
-const Table = require('cli-table3')
-const groupBy = require('json-groupby')
-const commandLineArgs = require('command-line-args')
+const https = require('https');
+const Table = require('cli-table3');
+const groupBy = require('json-groupby');
+const commandLineArgs = require('command-line-args');
 
 
 const optionDefinitions = [
@@ -15,7 +15,7 @@ const request = {
   port: 443,
   path: (options.country_code) ? '/v2/locations?country_code=' + options.country_code : '/v2/locations',
   method: 'GET'
-}
+};
 
 var response;
 //var table = new Table({ chars: {'mid': '', 'left-mid': '', 'mid-mid': '', 'right-mid': ''} });
@@ -34,7 +34,7 @@ const req = https.request(request, res => {
   res.on('data', d => {
     response += d;
 
-  })
+  });
 
   res.on("end", () => {
     try {
@@ -81,13 +81,13 @@ const req = https.request(request, res => {
         console.log(table.toString());
     } catch (error) {
         console.error(error.message);
-    };
-});
+    }
+  });
 
 });
 
 req.on('error', error => {
   console.error(error)
-})
+});
 
-req.end()
+req.end();
