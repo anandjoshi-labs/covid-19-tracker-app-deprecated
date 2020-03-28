@@ -3,7 +3,6 @@ const Table = require('cli-table3');
 const groupBy = require('json-groupby');
 const commandLineArgs = require('command-line-args');
 
-
 const optionDefinitions = [
   { name: 'summary', type: Boolean, defaultOption: false },
   { name: 'country_code', type: String }
@@ -17,9 +16,8 @@ const request = {
   method: 'GET'
 };
 
-var response;
 //var table = new Table({ chars: {'mid': '', 'left-mid': '', 'mid-mid': '', 'right-mid': ''} });
-var table = new Table({
+let table = new Table({
   chars: { 'top': '═' , 'top-mid': '╤' , 'top-left': '╔' , 'top-right': '╗'
          , 'bottom': '═' , 'bottom-mid': '╧' , 'bottom-left': '╚' , 'bottom-right': '╝'
          , 'left': '║' , 'left-mid': '╟' , 'mid': '─' , 'mid-mid': '┼'
