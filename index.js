@@ -6,8 +6,8 @@ const commandLineArgs = require('command-line-args');
 const optionDefinitions = [
   { name: 'summary', type: Boolean, defaultOption: false },
   { name: 'country_code', type: String }
-]
-const options = commandLineArgs(optionDefinitions)
+];
+const options = commandLineArgs(optionDefinitions);
 
 const request = {
   hostname: 'coronavirus-tracker-api.herokuapp.com',
