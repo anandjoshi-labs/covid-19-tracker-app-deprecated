@@ -1,37 +1,117 @@
-## Welcome to GitHub Pages
+## Welcome to COVID-19 commandline tracker
 
-You can use the [editor on GitHub](https://github.com/anandjoshi-labs/covid-19-tracker-app/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+In 2020, I had a curiosity to check the cases in neighbourhood and other countries, so I had a small nodejs based CLI tool to print covid cases.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Special thanks to [COVID-19 Tracker API](https://github.com/ExpDev07/coronavirus-tracker-api) to get latest COVID-19 data. 
 
-### Markdown
+![Covid-19 Cases](https://covid19-badges.herokuapp.com/confirmed/latest) ![Covid-19 Recovered](https://covid19-badges.herokuapp.com/recovered/latest) ![Covid-19 Deaths](https://covid19-badges.herokuapp.com/deaths/latest)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Build
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```javascript
+npm install
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Usage
 
-### Jekyll Themes
+```javascript
+❯ node index.js --country_code CA --summary
+COVID API statusCode: 200
+╔══════════════╤═════════╤═══════════╤═══════════╤═══════╗
+║ Country Code │ Country │ Confirmed │ Recovered │ Death ║
+╟──────────────┼─────────┼───────────┼───────────┼───────╢
+║              │         │           │           │       ║
+╟──────────────┼─────────┼───────────┼───────────┼───────╢
+║ CA           │ Canada  │ 2790      │ 0         │ 26    ║
+╚══════════════╧═════════╧═══════════╧═══════════╧═══════╝
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/anandjoshi-labs/covid-19-tracker-app/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+```javascript
+❯ node index.js --country_code CA
+COVID API statusCode: 200
+╔══════════════╤═════════╤═══════════════════════════╤═══════════╤═══════════╤═══════╗
+║ Country Code │ Country │ Province                  │ Confirmed │ Recovered │ Death ║
+╟──────────────┼─────────┼───────────────────────────┼───────────┼───────────┼───────╢
+║              │         │                           │           │           │       ║
+╟──────────────┼─────────┼───────────────────────────┼───────────┼───────────┼───────╢
+║ CA           │ Canada  │ Alberta                   │ 359       │ 0         │ 1     ║
+╟──────────────┼─────────┼───────────────────────────┼───────────┼───────────┼───────╢
+║ CA           │ Canada  │ British Columbia          │ 617       │ 0         │ 13    ║
+╟──────────────┼─────────┼───────────────────────────┼───────────┼───────────┼───────╢
+║ CA           │ Canada  │ Grand Princess            │ 13        │ 0         │ 0     ║
+╟──────────────┼─────────┼───────────────────────────┼───────────┼───────────┼───────╢
+║ CA           │ Canada  │ Manitoba                  │ 21        │ 0         │ 0     ║
+╟──────────────┼─────────┼───────────────────────────┼───────────┼───────────┼───────╢
+║ CA           │ Canada  │ New Brunswick             │ 18        │ 0         │ 0     ║
+╟──────────────┼─────────┼───────────────────────────┼───────────┼───────────┼───────╢
+║ CA           │ Canada  │ Newfoundland and Labrador │ 35        │ 0         │ 0     ║
+╟──────────────┼─────────┼───────────────────────────┼───────────┼───────────┼───────╢
+║ CA           │ Canada  │ Nova Scotia               │ 51        │ 0         │ 0     ║
+╟──────────────┼─────────┼───────────────────────────┼───────────┼───────────┼───────╢
+║ CA           │ Canada  │ Ontario                   │ 588       │ 0         │ 7     ║
+╟──────────────┼─────────┼───────────────────────────┼───────────┼───────────┼───────╢
+║ CA           │ Canada  │ Prince Edward Island      │ 3         │ 0         │ 0     ║
+╟──────────────┼─────────┼───────────────────────────┼───────────┼───────────┼───────╢
+║ CA           │ Canada  │ Quebec                    │ 1013      │ 0         │ 4     ║
+╟──────────────┼─────────┼───────────────────────────┼───────────┼───────────┼───────╢
+║ CA           │ Canada  │ Saskatchewan              │ 72        │ 0         │ 0     ║
+╟──────────────┼─────────┼───────────────────────────┼───────────┼───────────┼───────╢
+║ CA           │ Canada  │ Diamond Princess          │ 0         │ 0         │ 1     ║
+╟──────────────┼─────────┼───────────────────────────┼───────────┼───────────┼───────╢
+║ CA           │ Canada  │ Recovered                 │ 0         │ 0         │ 0     ║
+╚══════════════╧═════════╧═══════════════════════════╧═══════════╧═══════════╧═══════╝
+```
 
-### Support or Contact
+```javascript
+❯ node index.js
+COVID API statusCode: 200
+╔══════════════╤══════════════════════════════════╤══════════════════════════════╤═══════════╤═══════════╤═══════╗
+║ Country Code │ Country                          │ Province                     │ Confirmed │ Recovered │ Death ║
+╟──────────────┼──────────────────────────────────┼──────────────────────────────┼───────────┼───────────┼───────╢
+║              │                                  │                              │           │           │       ║
+╟──────────────┼──────────────────────────────────┼──────────────────────────────┼───────────┼───────────┼───────╢
+║ AF           │ Afghanistan                      │                              │ 74        │ 0         │ 1     ║
+╟──────────────┼──────────────────────────────────┼──────────────────────────────┼───────────┼───────────┼───────╢
+║ AL           │ Albania                          │                              │ 123       │ 0         │ 5     ║
+╟──────────────┼──────────────────────────────────┼──────────────────────────────┼───────────┼───────────┼───────╢
+║ DZ           │ Algeria                          │                              │ 264       │ 0         │ 19    ║
+╟──────────────┼──────────────────────────────────┼──────────────────────────────┼───────────┼───────────┼───────╢
+║ AD           │ Andorra                          │                              │ 164       │ 0         │ 1     ║
+╟──────────────┼──────────────────────────────────┼──────────────────────────────┼───────────┼───────────┼───────╢
+║ AO           │ Angola                           │                              │ 3         │ 0         │ 0     ║
+╟──────────────┼──────────────────────────────────┼──────────────────────────────┼───────────┼───────────┼───────╢
+║ AG           │ Antigua and Barbuda              │                              │ 3         │ 0         │ 0     ║
+╟──────────────┼──────────────────────────────────┼──────────────────────────────┼───────────┼───────────┼───────╢
+║ AR           │ Argentina                        │                              │ 387       │ 0         │ 6     ║
+╟──────────────┼──────────────────────────────────┼──────────────────────────────┼───────────┼───────────┼───────╢
+║ AM           │ Armenia                          │                              │ 249       │ 0         │ 0     ║
+╟──────────────┼──────────────────────────────────┼──────────────────────────────┼───────────┼───────────┼───────╢
+║ AU           │ Australia                        │ Australian Capital Territory │ 39        │ 0         │ 0     ║
+╟──────────────┼──────────────────────────────────┼──────────────────────────────┼───────────┼───────────┼───────╢
+║ AU           │ Australia                        │ New South Wales              │ 818       │ 0         │ 7     ║
+╟──────────────┼──────────────────────────────────┼──────────────────────────────┼───────────┼───────────┼───────╢
+║ AU           │ Australia                        │ Northern Territory           │ 6         │ 0         │ 0     ║
+╟──────────────┼──────────────────────────────────┼──────────────────────────────┼───────────┼───────────┼───────╢
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+....
+
+╟──────────────┼──────────────────────────────────┼──────────────────────────────┼───────────┼───────────┼───────╢
+║ ZW           │ Zimbabwe                         │                              │ 3         │ 0         │ 1     ║
+╟──────────────┼──────────────────────────────────┼──────────────────────────────┼───────────┼───────────┼───────╢
+║ DM           │ Dominica                         │                              │ 2         │ 0         │ 0     ║
+╟──────────────┼──────────────────────────────────┼──────────────────────────────┼───────────┼───────────┼───────╢
+║ GD           │ Grenada                          │                              │ 1         │ 0         │ 0     ║
+╟──────────────┼──────────────────────────────────┼──────────────────────────────┼───────────┼───────────┼───────╢
+║ MZ           │ Mozambique                       │                              │ 3         │ 0         │ 0     ║
+╟──────────────┼──────────────────────────────────┼──────────────────────────────┼───────────┼───────────┼───────╢
+║ SY           │ Syria                            │                              │ 1         │ 0         │ 0     ║
+╟──────────────┼──────────────────────────────────┼──────────────────────────────┼───────────┼───────────┼───────╢
+║ TL           │ Timor-Leste                      │                              │ 1         │ 0         │ 0     ║
+╟──────────────┼──────────────────────────────────┼──────────────────────────────┼───────────┼───────────┼───────╢
+║ BZ           │ Belize                           │                              │ 1         │ 0         │ 0     ║
+╟──────────────┼──────────────────────────────────┼──────────────────────────────┼───────────┼───────────┼───────╢
+║ LA           │ Laos                             │                              │ 2         │ 0         │ 0     ║
+╟──────────────┼──────────────────────────────────┼──────────────────────────────┼───────────┼───────────┼───────╢
+║ LY           │ Libya                            │                              │ 1         │ 0         │ 0     ║
+╚══════════════╧══════════════════════════════════╧══════════════════════════════╧═══════════╧═══════════╧═══════╝
+```
