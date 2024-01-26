@@ -1,4 +1,4 @@
-# COVID-19 Tracker Commandline App
+# COVID-19 Tracker Commandline App [DEPRECATED]
 
 COVID-19 commandline tracker
 
